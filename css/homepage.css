@@ -1,0 +1,665 @@
+
+/*从遥远的 IE6 到版本帝 Chrome 他们都约好了，根元素默认的 font-size 都是 16px。*/
+html{
+    font-size:62.5%; /* 10÷16=62.5% */
+    font-family: "Hiragino Sans GB", "Microsoft YaHei",
+    "WenQuanYi Micro Hei", sans-serif;
+}
+/*sans-serif无衬线字体，是一类字体，它在操作系统或者浏览器里是可以设置的，
+你可以把它设置成宋体，也可以设置成微软雅黑，而设置的这种字体肯定是当前系统里存在的字体，
+所以使用这个字体就一定能显示出来，所以加上sans-serif就能保证调用。*/
+.c_right{
+    overflow: hidden;
+    padding-bottom: 10rem;
+}
+/*菜单按钮样式*/
+#menu_btn{
+    /*width: 80px;*/
+    /*height: 80px;*/
+    width: 8rem;
+    height: 8rem;
+    background: #00A8A9;
+    position: fixed;
+    top: 5rem;
+    z-index: 30;
+}
+#menu_btn:hover{
+    background: #00baba;
+    cursor: pointer;
+}
+.close_btn{
+    position: absolute;
+    left: 0px;
+}
+@keyframes frm_close_btn {
+    to{
+        transform: rotate(90deg);
+    }
+}
+.close_btn:hover{
+    animation:frm_close_btn 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+/*音频样式*/
+#bgm_control_btn{
+    z-index: 30;
+    position:relative;
+}
+.off_btn,.on_btn,.share_f,.share_t{
+    position:fixed;
+    /*left: 40px;*/
+    /*top: 200px;*/
+    left: 3.5rem;
+    top: 15rem;
+    display: block;
+}
+/*分享图标*/
+.share_f{
+    top: 20rem;
+}
+.share_t{
+    top: 23.5rem;
+}
+
+#example_video_1{
+    z-index: -100;
+    width: 100%;
+}
+#playervideo{
+    width: 100%;
+}
+
+/*媒体查询*/
+@media screen and (max-width: 1920px) {
+    /*视频样式*/
+    #playervideo{
+        position:relative;
+        /*top:40px;*/
+        top:4rem;
+    }
+    /*视频覆盖层*/
+    .cover_video{
+        /*width: 1460px;*/
+        /*height: 825px;*/
+        width: 100%;
+        height: 80rem;
+        background: #00A8A9;
+        position:absolute;
+        top: 0px;
+        z-index: 10;
+        display: none;
+    }
+    /*文字图片*/
+    #font_img{
+        position:absolute;
+        top:34rem;
+        left:3rem;
+        width:88%;
+        z-index:20;
+    }
+    /*文字图片div容器*/
+    .c_font_img{
+        width: 100%;
+        height: 21rem;
+        margin-top: 33rem;
+        background:#E8E8E8;
+        border: 1px solid #c2c2c2;
+        background-clip: content-box;
+        padding: 0.5rem;
+    }
+    /*游乐场*/
+    #c_blue2{
+        margin-top: 25rem;
+        position:absolute ;
+        right: -12rem;
+        width:90%;
+    }
+    #blue2{
+        width:90%;
+    }
+    #c_bg1,#c_bg2{
+        width: 60%;
+        height: 110rem;
+        background: #E8E8E8;
+        margin-top: 10rem;
+        position: relative;
+        z-index: 20;
+    }
+
+    #c_bg1_1,#c_bg2_2,#c_bg3_1{
+        width: 40rem;
+        height: 8rem;
+        background: #343434;
+        position: absolute;
+        bottom: -12rem;
+        box-shadow: 0 0 2rem grey;
+        overflow: hidden;
+    }
+    #c_bg3_1{
+        top: 5rem;
+        left:8rem;
+    }
+    #c_bg2{
+        width: 100%;
+        margin-bottom: 10rem;
+        background: #C3D1D1;
+    }
+    @keyframes frm_c_bg2_1 {
+        50%{
+            transform: rotate(15deg);
+        }
+        100%{
+            transform: rotate(-15deg);
+        }
+    }
+    #c_bg2_1:hover{
+        cursor:pointer;
+        animation:frm_c_bg2_1 2s alternate infinite ease-in-out;
+    }
+    #c_bg2_1{
+        position: absolute;
+        width: 35rem;
+        height: 34rem;
+        background: #ffffff;
+        top: 10rem;
+        left: 10rem;
+        box-shadow: 1rem 1rem 4rem grey;
+    }
+    #c_bg1_2{
+        width: 58%;
+        height: 30rem;
+        background: white;
+        position: absolute;
+        bottom: 5rem;
+        left:10rem;
+    }
+
+    #c_bg1_2>h1{
+        font-size: 3.2rem;
+        font-weight: bold;
+        /*color: #00A8A9;*/
+        color: #91B7D1;
+        padding: 1rem 2.5rem;
+        margin-top: 3rem;
+    }
+    /*伪元素选择器*/
+    #c_bg1_2:before,#c_bg1_2:after{
+        content: "";
+        width: 35%;
+        height: 0.5rem;
+        position: absolute;
+        bottom: 0.8rem;
+        z-index: -1;
+        box-shadow: 0.3rem 0.8rem 1.8rem black;
+        transform: rotate(-4deg);
+    }
+    #c_bg1_2:after{
+        bottom: 0.8rem;
+        right: 0.5rem;
+        transform: rotate(4deg);
+    }
+    .c_vison{
+        width: 100%;
+        height: 95rem;
+        background: #E7F6FA;
+        margin:5rem 0;
+        position: relative;
+    }
+    .c_vison_img{
+        position: relative;
+    }
+    #vison_img1,#vison_img2,#vison_img3,#vison_img4{
+        position: absolute;
+        top:18rem;
+        left:40rem;
+        z-index: 0;
+        width: 120%;
+        transform:scale(0.9);
+        border: 1rem solid white;
+    }
+    #vison_img1:hover,#vison_img2:hover,#vison_img3:hover,#vison_img4:hover{
+        cursor: pointer;
+    }
+    #vison_img2{
+        left:50rem;
+        top:18.2rem;
+        transform:scale(1);
+    }
+    #vison_img3{
+        left:60rem;
+        top:18.4rem;
+        transform:scale(1.1);
+    }
+    #vison_img4{
+        left:70rem;
+        top:18.6rem;
+        transform:scale(1.2);
+    }
+
+    #vison_img1:hover {
+        z-index: 20;
+        left:55rem;
+        transition: left 0.5s ease-in-out;
+        transform: scale(1.4);
+
+    }
+    #vison_img2:hover {
+        z-index: 20;
+        left:65rem;
+        transition: left 0.5s ease-in-out;
+        transform: scale(1.4);
+
+    }
+    #vison_img3:hover {
+        z-index: 20;
+        left:75rem;
+        transition: left 0.5s ease-in-out;
+        transform: scale(1.4);
+
+    }
+
+    #vison_img4:hover {
+        z-index: 20;
+        left:85rem;
+        transition: left 0.5s ease-in-out;
+        transform: scale(1.4);
+
+    }
+
+    /*内容*/
+    #content_1,#content_2,#content_3，#content_4{
+        margin-top: 5rem;
+        font-family:'微软雅黑';
+        color: #575555;
+    }
+
+    #content_3{
+        margin: 8rem 0rem 8rem 3rem;
+        font-family:Consolas;
+        font-size: 1.6rem;
+        /*font-style: italic;*/
+    }
+    #content_4{
+        position: absolute;
+        right: 8rem;
+        top: 3rem;
+    }
+    /*标题*/
+    #title_1{
+        font-family:'微软雅黑';
+        color: #fff;
+        background: #00A8A9;
+        padding: 2rem;
+        font-size: 2rem;
+        margin-top: 4rem;
+    }
+    #c_blue8{
+        position: absolute;
+        top: -10rem;
+        right: -52rem;
+        z-index: 21;
+    }
+    #c_blue6{
+        position: absolute;
+        right: -52rem;
+        bottom: -5rem;
+        z-index: 21;
+    }
+    #blue3{
+        width: 65rem;
+        heigth:65rem;
+        overflow:hidden;
+        position: absolute;
+        top:20rem;
+        left:10rem;
+        z-index: 21;
+    }
+    #blue3>img{
+        width: 65rem;
+        heigth:65rem;
+    }
+
+    #blue3>img:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+    #c_blue1{
+        overflow: hidden;
+        width: 90%;
+        border: 1px solid #c2c2c2;
+        background-clip: content-box;
+        padding: 1rem;
+        margin-top: 30rem;
+    }
+    #blue1{
+        width: 100%;
+    }
+    @keyframes frm_blue1 {
+        to{
+            transform: scale(1.15);
+        }
+    }
+    #c_blue1:hover #blue1{
+        animation:frm_blue1 0.5s forwards linear;
+        cursor: pointer;
+    }
+    /*轮播图*/
+    .carousel{
+        background: #F3F2EE;
+    }
+    .carousel-control.left,.carousel-control.right{
+        background: transparent;
+    }
+    .carousel-control{
+        width: 10rem;
+        height: 36rem;
+        line-height: 36rem;
+    }
+    .carousel-control:hover img{
+        background: #959595;
+        padding: 1rem;
+    }
+    .carousel-caption{
+        font-size:5rem;
+        height: 36rem;
+        line-height: 36rem;
+    }
+    @keyframes frm_mountain {
+        to{
+            transform: scale(1.2);
+        }
+
+    }
+    .mountain:hover{
+        border: 1rem double #CCDAED;
+        animation:frm_mountain 0.5s forwards ease-in-out;
+    }
+
+}
+@media screen and (max-width: 1280px) {
+    #content_4{
+        right: 5rem;
+    }
+    .c_vison{
+        height: 80rem;
+    }
+    #vison_img1,#vison_img2,#vison_img3,#vison_img4{
+        left:30rem;
+        width: 140%;
+    }
+    #vison_img2{
+        left:40rem;
+    }
+    #vison_img3{
+        left:50rem;
+    }
+    #vison_img4{
+        left:60rem;
+    }
+
+    #vison_img1:hover {
+        left:40rem;
+    }
+    #vison_img2:hover {
+        left:50rem;
+    }
+    #vison_img3:hover {
+        left:60rem;
+    }
+
+    #vison_img4:hover {
+        left:70rem;
+    }
+    /*视频样式*/
+    #playervideo{
+        top:5rem;
+    }
+    /*视频覆盖层*/
+    .cover_video{
+        height: 53rem;
+    }
+    .c_font_img{
+        width: 105%;
+        height: 15rem;
+    }
+    #font_img{
+        top:34rem;
+        left:3rem;
+        width:88%;
+    }
+    #c_blue2{
+        margin-top: 20rem;
+        width:100%;
+        right: -12rem;
+    }
+    #blue2{
+        width:88%;
+    }
+    #c_bg1,#c_bg2{
+        height: 80rem;
+        margin-top: 20rem;
+    }
+    #c_bg1{
+        width: 58%;
+    }
+
+    #content_1{
+        width: 155%;
+        margin-top: 16rem;
+    }
+    #content_2{
+        margin-top: 1rem;
+        width: 110%;
+    }
+    /*标题*/
+    #title_1{
+        padding: 1.5rem 1.2rem;
+        width: 118%;
+        margin-top: 4.8rem;
+        position: absolute;
+        z-index: 20;
+    }
+    #c_blue8{
+        top: -35rem;
+    }
+    #c_blue6{
+        bottom: -15rem;
+    }
+    #blue3{
+        width: 50rem;
+        heigth:50rem;
+        left:9rem;
+        top:6rem;
+    }
+    #blue3>img{
+        width: 50rem;
+        heigth:50rem;
+    }
+    #shop{
+        width: 100%;
+    }
+
+    /*轮播图*/
+
+    .carousel-control{
+        width: 7rem;
+        height: 24rem;
+        line-height: 24rem;
+    }
+    .carousel-control:hover img{
+        padding: 0.5rem;
+    }
+    .carousel-caption{
+        font-size:4rem;
+        height: 24rem;
+        line-height: 24rem;
+    }
+    #c_bg1_2{
+        width: 69%;
+        height: 30rem;
+        bottom: 4rem;
+        left:9rem;
+    }
+
+}
+
+#title_1:hover{
+    background: #00bfbf;
+    cursor: pointer;
+}
+
+/*菜单*/
+#c_menu{
+    width: 100%;
+    height: 100%;
+    background: #100e0e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 22;
+    display:none;
+}
+#main_menu{
+    width: 90rem;
+    margin: 15rem auto;
+}
+#main_menu p{
+    position: absolute;
+    bottom: -6rem;
+}
+.line_menu{
+    height: 1px;
+    width: 25rem;
+    vertical-align:middle;
+    background: #00A8A9;
+    display:inline-block;
+    margin-left: 2rem;
+}
+#main_menu>ul>li>a:hover .line_menu{
+    animation:frm_line 1s infinite linear;
+    background: #7E7E7E;
+}
+@keyframes frm_line {
+    50%{
+        transform:translateX(5px) ;
+    }
+    100%{
+        transform:translateX(-5px) ;
+    }
+}
+
+#main_menu>ul{
+    list-style: none;
+    font-size: 3rem;
+}
+#main_menu>ul>li{
+    margin: 1rem 0;
+    overflow: hidden;
+}
+#main_menu>ul>li>a{
+    color: #7E7E7E;
+    text-decoration:none;
+    display:none;
+    position: relative;
+}
+#main_menu>ul>li>a:hover{
+    color: #00A8A9;
+}
+
+#main_menu>ul>li>a:hover .glyphicon-menu-right{
+    transform: translate(1rem) scale(1.2);
+    color: #4ceeb9;
+}
+
+#main_menu>ul>li>a:hover span:nth-child(1){
+    /*transform: rotate(30deg);*/
+    color: #4ceeb9;
+}
+
+#main_menu>ul>li>a img{
+    margin: 0 2rem;
+    opacity: 0.5;
+}
+
+@keyframes frm_menu_img {
+    to{
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+#main_menu>ul>li>a:hover img{
+    animation:frm_menu_img 0.5s forwards ease-in-out;
+}
+
+#close_menu{
+    color: #00A8A9;
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+    font-size: 2rem;
+}
+#close_menu:hover{
+    cursor: pointer;
+    animation:frm_close_btn 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+
+#thank{
+    position: absolute;
+    left: -10rem;
+}
+.bg_footer{
+    position: relative;
+}
+.bg_footer>a>img:hover{
+    opacity: 0.6;
+}
+#to_top{
+    position: absolute;
+    right: 2rem;
+    bottom: 15rem;
+    background: #b0b0b0;
+}
+#c_bg1_1,#c_bg2_2{
+    bottom: -12rem;
+    right: 13rem;
+
+}
+#c_bg1_1{
+    top: -5rem;
+}
+.arrow_right_white{
+    position: absolute;
+    right: 1rem;
+    top: 3.2rem;
+    z-index: 21;
+
+}
+#c_bg1_1 span,#c_bg2_2 span,#c_bg3_1 span{
+    color: white;
+    font-family: 微软雅黑;
+    font-size:2rem;
+    line-height:8rem;
+    position: absolute;
+    z-index: 21;
+    left:2rem;
+}
+.cover_c_bg{
+    width: 40rem;
+    height: 8rem;
+    position: absolute;
+    bottom: 0rem;
+    left: -40rem;
+    background: #91B7D1;
+}
+
+#c_bg1_1:hover,#c_bg2_2:hover{
+    cursor: pointer;
+}
+
+
+.arrow_black{
+    vertical-align: bottom;
+}

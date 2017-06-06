@@ -1,0 +1,74 @@
+/* HTML5 display-role reset for older browsers */
+
+/*jquery整屏滚动插件Scrollify*/
+/****** Main ********/
+section {
+	display: block;
+}
+
+.scroll {
+	position:absolute;
+	font-size:1.5em;
+	bottom:8em;
+	display:block;
+	left: 50%;
+
+}
+
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active ,
+.scroll:hover {
+	color:#FFF;
+	text-decoration:none;
+}
+
+.scroll:after {
+	content:'';
+	width:40px;
+	height:40px;
+	position:absolute;
+	top:40px;
+	margin:auto;
+	right:0;
+	bottom:0;
+	/*left:0;*/
+	-webkit-animation:3s arrow infinite ease;
+	animation:3s arrow infinite ease;
+}
+
+.scroll:after {
+	border-right:2px solid #FFF;
+	border-bottom:2px solid #FFF;
+	-ms-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	transform:rotate(45deg);
+	
+}
+
+@-webkit-keyframes arrow {
+	0%,100% {
+		top:50px;
+	}
+	50% {
+		top:80px;
+	}
+}
+@keyframes arrow {
+	0%,100% {
+		top:50px;
+	}
+	50% {
+		top:80px;
+	}
+}
+
+/*vh：viewpoint height，视窗高度，1vh等于视窗高度的1%。*/
+.panel {
+	height:100vh;
+}
+
+
+
